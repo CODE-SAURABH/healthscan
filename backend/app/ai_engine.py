@@ -108,9 +108,9 @@ def _get_mime_type(file_path: str) -> str:
 
 
 @retry(
-    stop=stop_after_attempt(3),
-    wait=wait_exponential(multiplier=1, min=4, max=10),
-    retry=retry_if_exception_type(Exception), # Catch API errors
+    stop=stop_after_attempt(2),
+    wait=wait_exponential(multiplier=2, min=10, max=30),
+    retry=retry_if_exception_type(Exception),
     reraise=True
 )
 async def analyze_with_gemini(file_path: str) -> dict:

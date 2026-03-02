@@ -7,7 +7,7 @@
     "rewrites": [
         {
             "source": "/api/:path*",
-            "destination": "https://healthscan-api.onrender.com/api/:path*"
+            "destination": "https://healthscan-api-6yy2.onrender.com/api/:path*"
         }
     ]
 }
