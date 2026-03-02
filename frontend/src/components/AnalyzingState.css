@@ -1,0 +1,121 @@
+/* ─── Analyzing State ────────────────────────────────────────── */
+
+.analyzing-container {
+    display: flex;
+    justify-content: center;
+    min-height: 60vh;
+    align-items: center;
+    animation: fadeIn 0.4s ease;
+}
+
+.analyzing-card {
+    text-align: center;
+    padding: 3rem 2rem;
+    max-width: 420px;
+    width: 100%;
+}
+
+/* Scanner Visual */
+.scanner-visual {
+    position: relative;
+    width: 120px;
+    height: 120px;
+    margin: 0 auto 2rem;
+}
+
+.scanner-ring {
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    border: 2px solid transparent;
+}
+
+.ring-1 {
+    border-top-color: var(--accent-primary);
+    animation: spin 1.5s linear infinite;
+}
+
+.ring-2 {
+    inset: 10px;
+    border-right-color: var(--accent-secondary);
+    animation: spin 2s linear infinite reverse;
+}
+
+.ring-3 {
+    inset: 20px;
+    border-bottom-color: rgba(0, 212, 170, 0.3);
+    animation: spin 2.5s linear infinite;
+}
+
+.scanner-center {
+    position: absolute;
+    inset: 30px;
+    border-radius: 50%;
+    background: var(--accent-glow);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--accent-primary);
+    animation: glowPulse 2s infinite;
+}
+
+/* Text */
+.analyzing-title {
+    font-size: 1.375rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.analyzing-subtitle {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    margin-bottom: 2rem;
+}
+
+/* Progress Steps */
+.progress-steps {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    text-align: left;
+    margin-bottom: 2rem;
+}
+
+.step {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    transition: color 0.3s;
+}
+
+.step.active {
+    color: var(--text-primary);
+}
+
+.step-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--bg-glass);
+    border: 2px solid var(--border);
+    flex-shrink: 0;
+    transition: all 0.3s;
+}
+
+.step-dot.done {
+    background: var(--accent-primary);
+    border-color: var(--accent-primary);
+}
+
+.step-dot.loading {
+    background: var(--accent-primary);
+    border-color: var(--accent-primary);
+    animation: pulse 1s infinite;
+}
+
+.analyzing-note {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+}

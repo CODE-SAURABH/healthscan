@@ -1,0 +1,23 @@
+# Render.com deployment configuration
+# Place this in the project root
+
+services:
+  - type: web
+    name: healthscan-api
+    runtime: python
+    rootDir: backend
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn app.main:app --host 0.0.0.0 --port $PORT
+    envVars:
+      - key: AI_PROVIDER
+        value: gemini
+      - key: GEMINI_API_KEY
+        sync: false  # Set manually in dashboard
+      - key: APP_ENV
+        value: production
+      - key: DEBUG
+        value: false
+      - key: FRONTEND_URL
+        sync: false  # Set to your Vercel URL
+    plan: free
+    healthCheckPath: /api/health
