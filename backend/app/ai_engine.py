@@ -81,8 +81,9 @@ RETURN FORMAT — Valid JSON only:
     "report_type": "Blood Test / Thyroid Panel / Lipid Profile / etc."
   },
   "parameters": [ ...array of parameter objects... ],
+  "medicines": [ "Extractions of medicine names found in the report/prescription" ],
   "summary": { ...summary object... },
-  "disclaimer": "This analysis is for informational purposes only and is NOT medical advice. Always consult a qualified healthcare professional for diagnosis and treatment decisions."
+  "disclaimer": "..."
 }
 """
 

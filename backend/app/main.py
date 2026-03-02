@@ -18,6 +18,7 @@ from app.database import get_db, init_db
 from app.models import Report
 from app.ai_engine import analyze_report
 from app.pdf_generator import generate_report_pdf
+from app.medicine_engine import get_medicine_savings
 
 # ─── Logging Setup ─────────────────────────────────────────────
 
@@ -194,6 +195,7 @@ async def upload_and_analyze(
             "report_info": result.get("report_info", {}),
             "parameters": result.get("parameters", []),
             "summary": result.get("summary", {}),
+            "savings": get_medicine_savings(result.get("medicines", [])),
             "disclaimer": result.get(
                 "disclaimer",
                 "This analysis is for informational purposes only and is NOT medical advice. "

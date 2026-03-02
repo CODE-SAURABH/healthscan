@@ -1,6 +1,7 @@
 import React from 'react'
 import config from '../config'
 import ParameterCard from './ParameterCard'
+import MedicineSavings from './MedicineSavings'
 import './ResultsView.css'
 
 const SEVERITY_CONFIG = {
@@ -83,6 +84,7 @@ function ResultsView({ results, language, onReset }) {
                 </div>
 
                 <p className="summary-text">{summaryText}</p>
+                <MedicineSavings savings={results.savings} language={language} />
 
                 {/* Stats */}
                 <div className="summary-stats">
