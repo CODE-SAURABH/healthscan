@@ -63,6 +63,20 @@ Also provide an overall summary:
   "next_steps": ["Consult your doctor about low hemoglobin", "Consider iron-rich foods"]
 }
 
+If you find MEDICINES in the report or prescription, analyze them:
+{
+  "medicines": [
+    {
+      "name": "Brand Name (e.g., Augmentin 625)",
+      "salt": "Chemical Name (e.g., Amoxicillin + Clavulanic Acid)",
+      "typical_branded_price": 200,
+      "typical_generic_price": 60,
+      "savings_pct": 70,
+      "purpose": "Antibiotic for infections"
+    }
+  ]
+}
+
 CRITICAL RULES — READ CAREFULLY:
 1. NEVER diagnose. NEVER say "You have [disease]."
 2. Use phrases: "This may suggest...", "This could indicate...", "Please consult your doctor for..."
@@ -81,7 +95,7 @@ RETURN FORMAT — Valid JSON only:
     "report_type": "Blood Test / Thyroid Panel / Lipid Profile / etc."
   },
   "parameters": [ ...array of parameter objects... ],
-  "medicines": [ "Extractions of medicine names found in the report/prescription" ],
+  "medicines": [ ...array of medicine objects... ],
   "summary": { ...summary object... },
   "disclaimer": "..."
 }
