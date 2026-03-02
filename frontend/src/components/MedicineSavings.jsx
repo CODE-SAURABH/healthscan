@@ -41,6 +41,7 @@ function MedicineSavings({ savings, language }) {
                         <div className="alt-info">
                             <span className="alt-original">{alt.original}</span>
                             <span className="alt-generic">➡️ {alt.generic_name}</span>
+                            {alt.purpose && <span className="alt-purpose">{alt.purpose}</span>}
                         </div>
                         <div className="alt-price">
                             <span className="price-tag old">₹{alt.branded_price}</span>
